@@ -2,7 +2,11 @@ import datetime
 import tweepy
 import time
 import re
+import sys
+sys.path.append('..')
+
 from config import (api, twitterAccounts, db)
+from imgUpload import uploadImgImgur
 
 cursor = db.cursor()
 
@@ -23,6 +27,7 @@ def addToDB(tweets, tableName):
             url = tweet['entities']['media'][0]['media_url']
             if url.endswith(".png") or url.endswith(".jpg") or url.endswith(".gif"):
                 twObj['tweet_media_url'] = url
+                twObj['imgur_url'] = uploadImgImgur(url)
         
         except Exception as e:
             print(e)

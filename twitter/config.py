@@ -24,3 +24,6 @@ db = mysql.connect(user=user, passwd=password, host=host, database=database)
 with open("twitter-accounts.json") as f:
     data = json.load(f)
     twitterAccounts = data['twitterAccounts']
+
+SLACK_WEBHOOK = os.getenv("SLACK_WEBHOOK")
+

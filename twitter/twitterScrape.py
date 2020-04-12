@@ -3,9 +3,8 @@ import tweepy
 import time
 import re
 import sys
-sys.path.append('..')
 
-from config import (api, twitterAccounts, db)
+from twitter.config import (api, twitterAccounts, db)
 from imgUpload import uploadImgImgur
 
 cursor = db.cursor()
@@ -54,22 +53,23 @@ def topTweets(tweets, numberOfTopTweets):
     return tweets
 
 
-for account in twitterAccounts:
-    print("Fetching Tweets for Account: {}".format(account))
-    sql = "SELECT `tweet_ID` FROM `fetched_tweets` WHERE `tweet_screen_name` = '{}' ORDER BY `tweet_fetched_time` DESC ".format(account)
+def scrapeAccount():
+    for account in twitterAccounts:
+        print("Fetching Tweets for Account: {}".format(account))
+        sql = "SELECT `tweet_ID` FROM `fetched_tweets` WHERE `tweet_screen_name` = '{}' ORDER BY `tweet_fetched_time` DESC ".format(account)
     
-    cursor.execute(sql)
-    try:
-        oldest = cursor.fetchall()[0][0]
-    except:
-        oldest = None
+        cursor.execute(sql)
+        try:
+            oldest = cursor.fetchall()[0][0]
+        except:
+            oldest = None
 
-    try:
-        tweets = api.user_timeline(screen_name = account, count = 5, since_id = oldest)
-        tweetArray = [tweet._json for tweet in tweets]
-        addToDB(tweetArray, "fetched_tweets")
-        topTweets(tweetArray, 2)
-        db.commit()    
+        try:
+            tweets = api.user_timeline(screen_name = account, count = 5, since_id = oldest)
+            tweetArray = [tweet._json for tweet in tweets]
+            addToDB(tweetArray, "fetched_tweets")
+            topTweets(tweetArray, 2)
+            db.commit()    
 
-    except Exception as e:
-        print(e)
+        except Exception as e:
+            print(e)

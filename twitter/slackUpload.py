@@ -1,14 +1,18 @@
 import os
 import json
 import requests
-from config import (db, SLACK_WEBHOOK)
+from twitter.config import (db, SLACK_WEBHOOK)
 
 def sendMessage():
     cursor = db.cursor()
     sql = "SELECT * FROM top_tweets WHERE posted_on_slack = 'N' ORDER BY RAND()"
     cursor.execute(sql)
-    row = cursor.fetchall()[0]
-
+    try:
+        row = cursor.fetchall()[0]
+    except:
+        print("No New Tweets :(")
+        return False
+    
     topTweet = {}
     columns = tuple([d[0] for d in cursor.description] )
 

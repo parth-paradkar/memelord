@@ -21,7 +21,7 @@ api = tweepy.API(auth)
 
 db = mysql.connect(user=user, passwd=password, host=host, database=database)
 
-with open("twitter-accounts.json") as f:
+with open("twitter/twitter-accounts.json") as f:
     data = json.load(f)
     twitterAccounts = data['twitterAccounts']
 

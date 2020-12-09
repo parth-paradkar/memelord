@@ -1,6 +1,6 @@
 # Replace the values in the fields below with your own info
 
-# twitter
+# Twitter
 user = os.getenv("MYSQL_USER")
 password = os.getenv("MYSQL_PASSWORD")
 host = os.getenv("MYSQL_HOST")
@@ -9,7 +9,7 @@ consumer_key = os.getenv("TWITTER_CONSUMER_KEY")
 consumer_secret = os.getenv("TWITTER_CONSUMER_SECRET_KEY")
 SLACK_WEBHOOK = os.getenv("SLACK_WEBHOOK")
 
-#imageupload
+#Imageupload
 client_id = os.getenv("IMGUR_CLIENT_ID")
 imgur_upload_url = "https://api.imgur.com/3/image"
 

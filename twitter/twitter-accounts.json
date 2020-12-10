@@ -1,4 +1,4 @@
-import config
 {
-	"twitterAccounts": config.twitterAccounts
+	"twitterAccounts": [ config.twitterAccounts]
+    
 }

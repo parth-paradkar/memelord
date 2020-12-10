@@ -1,5 +1,4 @@
-import json
-import time
+import config
 from helpers import get_post, send_to_slack
 
 with open('subreddits.json', 'r') as f:

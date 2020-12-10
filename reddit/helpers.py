@@ -1,7 +1,5 @@
 from base import reddit, SLACK_WEBHOOK
-import requests
-import json
-import os
+import config
 
 headers = { 'Content-type': 'application/json' }
 

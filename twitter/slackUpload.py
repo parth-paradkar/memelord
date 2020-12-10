@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-from twitter.config import (db, SLACK_WEBHOOK)
+from config import (db, SLACK_WEBHOOK)
 
 def sendMessage():
     cursor = db.cursor()

@@ -4,7 +4,7 @@ import time
 import re
 import sys
 
-from twitter.config import (api, twitterAccounts, db)
+from config import (api, twitterAccounts, db)
 from imgUpload import uploadImgImgur
 
 cursor = db.cursor()

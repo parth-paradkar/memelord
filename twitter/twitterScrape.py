@@ -1,10 +1,4 @@
-import datetime
-import tweepy
-import time
-import re
-import sys
-
-from config import (api, twitterAccounts, db)
+import config
 from imgUpload import uploadImgImgur
 
 cursor = db.cursor()

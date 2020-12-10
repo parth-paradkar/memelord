@@ -1,7 +1,4 @@
-import os
-import json
-import requests
-from config import (db, SLACK_WEBHOOK)
+import config
 
 def sendMessage():
     cursor = db.cursor()

@@ -1,4 +1,6 @@
 {
-	"twitterAccounts": [ config.twitterAccounts]
-    
+	"twitterAccounts": [
+		"iamdevloper",
+        "xkcdComic"
+    ]
 }

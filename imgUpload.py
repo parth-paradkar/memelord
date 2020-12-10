@@ -1,10 +1,4 @@
-import json
-import os
-import requests
-from dotenv import (load_dotenv, find_dotenv)
-
-load_dotenv(find_dotenv())
-
+import config
 def uploadImgImgur(url):
     r = requests.get(url)
     data = r.content

@@ -1,6 +1,13 @@
 import json
 import os
 import tweepy
+import praw
+import json
+import time
+import datetime
+import re
+import sys
+import requests
 import mysql.connector as mysql
 from dotenv import (load_dotenv, find_dotenv)
 load_dotenv(find_dotenv())

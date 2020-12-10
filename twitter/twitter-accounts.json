@@ -1,6 +1,4 @@
+import config
 {
-	"twitterAccounts": [
-		"iamdevloper",
-        "xkcdComic"
-    ]
+	"twitterAccounts": [config.twitterAccounts]
 }

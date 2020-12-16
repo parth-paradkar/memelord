@@ -2,7 +2,7 @@ certifi==2020.4.5.1
 chardet==3.0.4
 idna==2.9
 mysql==0.0.2
-mysql-connector==2.2.9
+mysql-connector-python==8.0.22
 mysqlclient==1.4.6
 oauthlib==3.1.0
 praw==6.5.1
